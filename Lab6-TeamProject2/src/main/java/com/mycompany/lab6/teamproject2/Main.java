@@ -17,13 +17,7 @@ public class Main { //Program execution class
         Random rand = new Random();
         Answer[] arr = new Answer[100]; //creates an array of objects for answers with a limit of 100
         Question[] arr1 = new Question[100]; //creates an array of objects for question with a limit of 100
-<<<<<<< HEAD
         int arr2[];
-=======
-        
-        
-        
->>>>>>> f5d309502718eb3a2968712b41231a99817138f9
         try { //creates a file text.txt and reads the questions into an array of objects of questions
             File myObj = new File("text.txt");
             Scanner myReader = new Scanner(myObj);
