@@ -12,9 +12,18 @@ public class Main { //Program execution class
     public static void main(String[] args) {
         int qCount = 0; 
         int aCount = 0; 
+        Scanner sc = new Scanner(System.in); 
+        Scanner sc2 = new Scanner(System.in);
+        Random rand = new Random();
         Answer[] arr = new Answer[100]; //creates an array of objects for answers with a limit of 100
         Question[] arr1 = new Question[100]; //creates an array of objects for question with a limit of 100
+<<<<<<< HEAD
         int arr2[];
+=======
+        
+        
+        
+>>>>>>> f5d309502718eb3a2968712b41231a99817138f9
         try { //creates a file text.txt and reads the questions into an array of objects of questions
             File myObj = new File("text.txt");
             Scanner myReader = new Scanner(myObj);
@@ -26,13 +35,23 @@ public class Main { //Program execution class
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
         } 
-        Scanner sc = new Scanner(System.in); 
-        Random rand = new Random(); 
+        
+        
         File fout = new File("Answers.txt");
         try { //taking user input for answers, storing them in an array of objects and writing them to an output file
             FileOutputStream fos = new FileOutputStream(fout);
             OutputStreamWriter osw = new OutputStreamWriter(fos);
-            for(int i = 0; i < 5; i ++) { 
+            System.out.println("How many questions do you want to answer?");
+            int questionRequest = sc2.nextInt();
+            while (questionRequest > qCount)
+            {
+                System.out.println("That is too many questions try again.");
+                System.out.println("How many questions do you want to answer?");
+                questionRequest = sc2.nextInt();
+            }
+            
+            for(int i = 0; i < questionRequest; i ++) 
+            { 
                 int ra = rand.nextInt(qCount);
                 System.out.println(arr1[ra]);
                 System.out.println("Answer:");
@@ -47,5 +66,6 @@ public class Main { //Program execution class
             } catch (IOException e) {
                 e.printStackTrace();
         }
+        
     }
 }
